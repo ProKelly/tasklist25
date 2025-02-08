@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="{% url 'task:create_task' %}">create task</a>
+    <br>
+    <section>
+        {% if tasks %}
+          {% for task in tasks %}
+          <a href="{% url 'task:detail_task' task.id %}">{{task}}</a><br>
+          {% endfor %}
+          {% else %}
+          <h2>No task available </h2>
+        {% endif %}
+    </section>
+</body>
+</html>

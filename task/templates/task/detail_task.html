@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <marquee behavior="" direction="right"><h1>{{task.title}}</h1></marquee>
+        <p>Description: {{task.description}}</p>
+        <p>Status: {{task.completed}}</p>
+    </section>
+
+    <a href="{% url 'task:delete_task' task.id %}">delete task</a><hr>
+    <a href="{% url 'task:update_task' task.id %}">update task</a>
+</body>
+</html>
